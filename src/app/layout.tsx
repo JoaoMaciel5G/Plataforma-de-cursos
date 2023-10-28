@@ -10,10 +10,11 @@ export const metadata: Metadata = {
   description: 'A Melhor plataforma de cursos de desenvolvimento web',
 }
 
-export default function RootLayout({children,}: {children: React.ReactNode}) {
+export default function RootLayout({children}: {children: React.ReactNode}) {
+
   return (
     <html lang="pt-br">
-      <body className={`${roboto.className}`}>
+      <body className={`${roboto.className} bg-slate-200`}>
         <Header/>
         {children}
       </body>

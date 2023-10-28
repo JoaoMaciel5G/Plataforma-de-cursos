@@ -3,5 +3,9 @@
 @tailwind utilities;
 
 .wrapper::-webkit-scrollbar{
-    height: 0px;
+    height: 8px;
+}
+.itemCourse{
+    background-image: url("../assets/image.jpg");
+    background-size: cover;
 }

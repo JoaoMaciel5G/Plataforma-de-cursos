@@ -7,12 +7,15 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    colors: {
-      "purple": "#5A1EEC",
-      "white": "#FFFFFF",
-      "aqua": "#0AFFBA",
-      "greenGreat": "#26cd23"
+    extend: {
+      colors: {
+        "purple": "#5A1EEC",
+        "white": "#FFFFFF",
+        "aqua": "#0AFFBA",
+        "greenGreat": "#26cd23"
+      }
     },
+    
   },
   plugins: [],
 }
