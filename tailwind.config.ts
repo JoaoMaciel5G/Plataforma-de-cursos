@@ -12,7 +12,9 @@ const config: Config = {
         "purple": "#5A1EEC",
         "white": "#FFFFFF",
         "aqua": "#0AFFBA",
-        "greenGreat": "#26cd23"
+        "green-650": "#26cd23",
+        "zinc-350": "#d8dee4",
+        "violet-650": "#662ef5"
       }
     },
     

@@ -5,7 +5,6 @@ function InfoPage() {
             <div>
                 <h1 className=""><span>Cursos Online aqui na Pro Tech</span> para turbinar seu aprendizado</h1>
             </div>
-            
         </div>
      );
 }
