@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens:{
+        "1xl": "1350px"
+      },
       colors: {
         "purple": "#5A1EEC",
         "white": "#FFFFFF",

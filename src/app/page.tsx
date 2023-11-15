@@ -3,9 +3,9 @@ import Footer from "./components/Footer"
 import Guaranty from "./components/Guaranty"
 import Suport from "./components/Suport"
 import Statement from "./components/Statement"
-import Header from "./components/clientComponents/Header"
+import Header from "./components/Header"
 
-export default async function Home() {
+export default function Home() {
   return (
     <>
       <Header/>
