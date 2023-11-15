@@ -1,4 +1,5 @@
 import { CheckListItem } from "./CheckListItem";
+import CheckListRightSide from "./CheckListRightSide";
 import TextList from "./TextLists";
 import { Star, Check } from "lucide-react";
 
@@ -25,47 +26,7 @@ export default function Statement(){
                     </div>
                 </div>
             </div>
-            <div className="flex justify-center items-center xl:w-1/2">
-                <div className="p-10 bg-zinc-400 rounded-xl xl:w-[500px]">
-                    <h2 className="text-white font-semibold text-2xl">O que você vai receber</h2>
-                    <div>
-                        <div className="flex my-4">
-                            <Star className="text-yellow-500 mx-2"/>
-                            <p className="text-white">Nova trilha de Inteligência artificial: desenvolvimento de IA</p>
-                        </div>
-                        <div className="flex my-4">
-                            <Star className="text-yellow-500 mx-2"/>
-                            <p className="text-white">Acesso imediato a TODOS os programas da plataforma</p>
-                        </div>
-                        <div className="flex my-4">
-                            <Check className="text-purple mx-2"/>
-                            <p className="text-white">Metodologia validada por + de 51 mil alunos</p>
-                        </div>
-                        <div className="flex my-4">
-                            <Check className="text-purple mx-2"/>
-                            <p className="text-white">Aulas gravadas pra assistir no seu ritmo</p>
-                        </div>
-                        <div className="flex my-4">
-                            <Check className="text-purple mx-2"/>
-                            <p className="text-white">Novas atualizações e conteúdos todos os meses</p>
-                        </div>
-                        <div className="flex my-4">
-                            <Check className="text-purple mx-2"/>
-                            <p className="text-white">Renove o segundo ano de assinatura pelo mesmo preço ao final do acesso</p>
-                        </div>
-                        <div className="flex my-4">
-                            <Check className="text-purple mx-2"/>
-                            <p className="text-white">Diversos certificados e mais de 76 projetos e desafios práticos</p>
-                        </div>
-                        <div className="flex my-4">
-                            <Check className="text-purple mx-2"/>
-                            <p className="text-white">7 dias de Garantia</p>
-                        </div>
-                    </div>
-                    <button className="w-full text-white bg-violet-600 rounded-lg py-5 font-semibold text-lg tracking-wider hover:bg-violet-650">Quero Assinar</button>
-                    <p className="text-center pt-10 font-semibold text-xl text-black">Desconto de R$ 100 no plano mensal</p>
-                </div>
-            </div>
+            <CheckListRightSide/>
         </section>
     )
 }

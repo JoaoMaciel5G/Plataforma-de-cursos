@@ -14,7 +14,7 @@ export default function ShowSideBar(){
     }
 
     return(
-        <div className="flex items-center md:hidden">
+        <div className="flex items-center min-[900px]:hidden">
             <AlignJustify onClick={showSideBar} size={40} id="menu" className="text-white cursor-pointer hover:text-aqua"/>
             <p className="text-white m-1">Menu</p>
         </div>

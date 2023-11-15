@@ -1,5 +1,5 @@
 import {cookies} from "next/headers"
-import ExploreCourses from "./serverComponent"
+import Home from "./serverComponent"
 
 type Cookies ={
     name: string,
@@ -18,6 +18,6 @@ export default function ServerComponent(){
     }
 
     return (
-        <ExploreCourses cookies={cookie} hasCookie={hasCookie} deleteCookie={deleteTokens} secret={secretKey}/>
+        <Home cookies={cookie} hasCookie={hasCookie} deleteCookie={deleteTokens} secret={secretKey}/>
     )
 }

@@ -5,7 +5,8 @@ import jwt, {TokenExpiredError} from "jsonwebtoken"
 import useAsyncEffect from 'use-async-effect'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
-import Loading from '../loading'
+import Loading from '../../loading'
+import Header from '../componentsPrivateRoute/Header'
 
 type Props ={ 
     cookies: {
@@ -17,7 +18,7 @@ type Props ={
     secret: string | undefined
 }
 
-export default function ExploreCourses({cookies, hasCookie, deleteCookie, secret}: Props){
+export default function Home({cookies, hasCookie, deleteCookie, secret}: Props){
     const [loading, setLoading] = useState(true);
     const router = useRouter()
 
@@ -57,8 +58,8 @@ export default function ExploreCourses({cookies, hasCookie, deleteCookie, secret
     }
 
     return(
-        <>
-            <h2>dashboard</h2>
-        </>
+        <main>
+            <Header/>
+        </main>
     )
 }
