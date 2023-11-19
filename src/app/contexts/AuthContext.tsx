@@ -35,7 +35,7 @@ export function AuthProvider({ children }: {children: ReactNode}){
             maxAge: 60 * 60 * 24 //24 hours
         })
 
-        router.push("/explorecourses")
+        router.push("/home")
     }
 
     return(

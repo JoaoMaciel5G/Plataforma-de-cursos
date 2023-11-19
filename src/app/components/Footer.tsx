@@ -7,7 +7,7 @@ export default function Footer(){
           <label htmlFor="email" className="font-semibold text-lg">Fique por dentro</label>
           <div>
             <form className="flex my-2">
-              <input type="email" id="email" placeholder="Email" className="py-3 outline-none px-4 w-full rounded-lg text-lg placeholder:font-semibold"/>
+              <input type="email" id="email" placeholder="Seu endereço de email" className="py-3 outline-none px-4 w-full rounded-lg text-lg placeholder:font-semibold"/>
               <button type="submit"><Send size={55} className="bg-purple text-white cursor-pointer rounded-lg ml-2 p-3"/></button>
             </form>
           </div>

@@ -12,13 +12,12 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
-
   return (
     <html lang="pt-br">
         <body className={`${roboto.className} bg-slate-200`}>
-          <AuthProvider>
-            {children}
-          </AuthProvider>
+            <AuthProvider>
+                {children}
+            </AuthProvider> 
         </body>
     </html>
   )
