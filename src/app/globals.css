@@ -12,7 +12,3 @@ body{
 .wrapper::-webkit-scrollbar{
     height: 0px;
 }
-.itemCourse{
-    background-image: url("../assets/image.jpg");
-    background-size: cover;
-}

@@ -1,4 +1,5 @@
 import Loading from "@/app/components/Loading";
+import Link from "next/link";
 import { Suspense } from "react";
 
 interface Data {
@@ -20,16 +21,22 @@ export default async function CourseItems(){
                 <div className="flex gap-4 mb-8">
                     {
                         courses.map((item: Data)=>{
-                            const formattedPrice = item.price.replace(".", ",")
-
+                            const priceInCents = Math.round(parseFloat(item.price) * 100)
+                            const formattedPrice = (priceInCents / 100).toFixed(2)
+                            const priceInReal = formattedPrice.replace(".", ",")
+                            
                             return(
                                 <div key={item.id}>
                                     <div>
-                                        <img className="bg-violet-500 rounded-sm p-3 w-full" src={item.images} alt="Imagem Cursos"/>
+                                        <Link href={`/courses/${item.id}`}>
+                                            <img className="bg-violet-500 rounded-sm p-3 w-full" src={item.images} alt="Imagem Cursos"/>
+                                        </Link>
                                     </div>
-                                    <h2 className="font-semibold my-2 h-4">{item.name}</h2>
+                                    <Link href={`/courses/${item.id}`}>
+                                        <h2 className="font-semibold my-2 h-4">{item.name}</h2>
+                                    </Link>
                                     <div className="flex items-center gap-2 mt-10 mb-5">
-                                        <p className="font-semibold text-lg">R$ {formattedPrice}0</p>
+                                        <p className="font-semibold text-lg">R$ {priceInReal}</p>
                                         <p className="line-through text-lg text-zinc-500">R$ 39,90</p>
                                     </div>
                                 </div>

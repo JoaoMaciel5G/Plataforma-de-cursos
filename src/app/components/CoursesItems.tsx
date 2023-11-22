@@ -27,7 +27,7 @@ export default async function CoursesItems() {
                     <div className="wrapper flex select-none gap-6 overflow-x-scroll scroll-smooth cursor-pointer">
                         {
                             courses.map((item: Data)=>(
-                                <img key={item.id} className="itemCourse max-md:w-[30%] md:w-[15%] rounded-lg p-3" src={item.images} alt="Imagem Cursos"/>
+                                <img key={item.id} className="bg-violet-500 max-md:w-[30%] md:w-[20%] lg:w-[10%] rounded-lg p-3" src={item.images} alt="Imagem Cursos"/>
                             ))
                         }
                     </div>

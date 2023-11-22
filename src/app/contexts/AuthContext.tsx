@@ -32,7 +32,7 @@ export function AuthProvider({ children }: {children: ReactNode}){
         setUser(userData)
 
         setCookie(undefined, "token", token, {
-            maxAge: 60 * 60 * 24 //24 hours
+            maxAge: 60 * 60 * 24 * 5 //5 days
         })
 
         router.push("/home")
