@@ -1,6 +1,5 @@
 import Image from "next/image"
-import gifNotFound from "@/assets/Questions.gif"
-import Link from "next/link"
+import gifNotFound from "@/assets/questions.gif"
 
 export default function NotFound(){
     return (

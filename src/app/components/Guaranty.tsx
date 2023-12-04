@@ -1,5 +1,5 @@
 import Image from "next/image"
-import selo from "@/assets/Selo-garantia.png"
+import selo from "@/assets/selo-garantia.png"
 
 export default function Guaranty(){
     return(
