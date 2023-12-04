@@ -3,7 +3,6 @@ import Loading from "./Loading";
 import ChevronLeftItem from "./clientComponents/ChevronLeftItem";
 import ChevronRightItem from "./clientComponents/ChevronRightItem";
 import { Data } from "../types";
-import Image from "next/image"
 
 export default async function CoursesItems() {
     const url = process.env.URL
@@ -22,7 +21,7 @@ export default async function CoursesItems() {
                     <div className="wrapper flex select-none gap-6 overflow-x-scroll scroll-smooth cursor-pointer">
                         {
                             courses.map((item: Data)=>(
-                                <Image key={item.id} className="bg-violet-500 max-md:w-[30%] md:w-[20%] lg:w-[10%] rounded-lg p-3" src={item.images} alt="Imagem Cursos"/>
+                                <img key={item.id} className="bg-violet-500 max-md:w-[30%] md:w-[20%] lg:w-[10%] rounded-lg p-3" src={item.images} alt="Imagem Cursos"/>
                             ))
                         }
                     </div>

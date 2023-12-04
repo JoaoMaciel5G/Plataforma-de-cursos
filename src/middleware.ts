@@ -15,13 +15,10 @@ export async function middleware(req: NextRequest) {
   const data = await response.json()
 
   if(response.status == 403){
+
     console.log(req.nextUrl.origin)
     console.log(req.nextUrl)
-    return res
-  }else if(data.error){
-    deleteCookie("token", {res, req})
-    res.headers.set("location", `${req.nextUrl.origin}/signIn`)
-    return res
+
   }
 }
 export const config = {
