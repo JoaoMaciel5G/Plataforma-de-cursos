@@ -16,11 +16,11 @@ export async function middleware(req: NextRequest) {
 
   if(response.status == 403){
     deleteCookie("token", {res, req})
-    res.headers.set("location", `${req.nextUrl.origin}/login`)
+    res.headers.set("location", `/login`)
     return res
   }else if(data.error){
     deleteCookie("token", {res, req})
-    res.headers.set("location", `${req.nextUrl.origin}/signIn`)
+    res.headers.set("location", `/signIn`)
     return res
   }
 }
