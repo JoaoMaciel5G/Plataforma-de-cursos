@@ -2,6 +2,7 @@ import Loading from "@/app/components/Loading";
 import { Data } from "@/app/types";
 import Link from "next/link";
 import { Suspense } from "react";
+import Image from "next/image";
 
 export default async function CourseItems(){
     const url = process.env.URL
@@ -22,7 +23,7 @@ export default async function CourseItems(){
                                 <div key={item.id}>
                                     <div>
                                         <Link href={`/courses/${item.id}`}>
-                                            <img className="bg-violet-500 rounded-sm p-3 w-full" src={item.images} alt="Imagem Cursos"/>
+                                            <Image className="bg-violet-500 rounded-sm p-3 w-full" src={item.images} alt="Imagem Cursos"/>
                                         </Link>
                                     </div>
                                     <Link href={`/courses/${item.id}`}>
