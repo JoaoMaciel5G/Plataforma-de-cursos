@@ -1,6 +1,7 @@
 "use client"
 
 import {useShoppingCart} from "use-shopping-cart"
+import Image from "next/image"
 
 function Cart() {
     const {formattedTotalPrice, cartCount, clearCart, cartDetails, removeItem, redirectToCheckout} = useShoppingCart()
@@ -31,7 +32,7 @@ function Cart() {
                     cartDetails && Object.keys(cartDetails).map((key)=>(
                             <div className="border-b-[1px] border-zinc-400 py-6 flex" key={cartDetails[key].id}>
                                 <div className="bg-violet-500 p-3 w-40 rounded-lg mr-5">
-                                    <img width={150} height={150} src={cartDetails[key].image} alt="foto adonis"/>
+                                    <Image width={150} height={150} src={cartDetails[key].image} alt="foto adonis"/>
                                 </div>
                                 <div>
                                     <div>

@@ -17,6 +17,8 @@ export async function middleware(req: NextRequest) {
   if(response.status == 403){
     deleteCookie("token", {res, req})
     res.headers.set("location", `${req.nextUrl.origin}/login`)
+    console.log(req.nextUrl.origin)
+    console.log(req.nextUrl)
     return res
   }else if(data.error){
     deleteCookie("token", {res, req})
