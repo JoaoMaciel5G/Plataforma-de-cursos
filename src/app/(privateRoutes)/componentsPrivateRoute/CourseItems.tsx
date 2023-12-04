@@ -1,14 +1,7 @@
 import Loading from "@/app/components/Loading";
+import { Data } from "@/app/types";
 import Link from "next/link";
 import { Suspense } from "react";
-
-interface Data {
-    id: string
-    images: string,
-    name: string,
-    description: string,
-    price: string
-}
 
 export default async function CourseItems(){
     const url = process.env.URL
@@ -20,7 +13,7 @@ export default async function CourseItems(){
         <Suspense fallback={<Loading/>}>
                 <div className="flex gap-4 mb-8">
                     {
-                        courses.map((item: Data)=>{
+                        courses && courses.map((item: Data)=>{
                             const priceInCents = Math.round(parseFloat(item.price) * 100)
                             const formattedPrice = (priceInCents / 100).toFixed(2)
                             const priceInReal = formattedPrice.replace(".", ",")

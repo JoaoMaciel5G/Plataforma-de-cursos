@@ -1,7 +1,6 @@
 import { CheckListItem } from "./CheckListItem";
 import CheckListRightSide from "./CheckListRightSide";
 import TextList from "./TextLists";
-import { Star, Check } from "lucide-react";
 
 export default function Statement(){
     return(

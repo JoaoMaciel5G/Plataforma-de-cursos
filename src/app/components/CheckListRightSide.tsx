@@ -1,4 +1,3 @@
-import { Star, Check } from "lucide-react";
 import StarCheckList from "./StarCheckRightSide";
 import ItemCheckRightSide from "./ItemCheckRightSide";
 

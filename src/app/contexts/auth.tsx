@@ -23,8 +23,5 @@ export async function signInRequest({name, email, password}: UserData) {
 
     const {token, userData} = await response.json()
 
-    return {
-        token,
-        userData
-    }
+    return { token, userData }
 }

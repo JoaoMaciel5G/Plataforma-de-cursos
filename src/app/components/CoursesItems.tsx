@@ -2,13 +2,7 @@ import { Suspense } from "react";
 import Loading from "./Loading";
 import ChevronLeftItem from "./clientComponents/ChevronLeftItem";
 import ChevronRightItem from "./clientComponents/ChevronRightItem";
-
-interface Data {
-    id: string
-    images: string,
-    name: string,
-    description: string
-}
+import { Data } from "../types";
 
 export default async function CoursesItems() {
     const url = process.env.URL

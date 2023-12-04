@@ -1,7 +1,7 @@
 "use client"
 
 import { createContext, ReactNode, useState} from "react"
-import {setCookie} from "nookies"
+import {setCookie} from "cookies-next"
 import { useRouter } from 'next/navigation'
 import { signInRequest } from "./auth"
 
@@ -31,7 +31,7 @@ export function AuthProvider({ children }: {children: ReactNode}){
 
         setUser(userData)
 
-        setCookie(undefined, "token", token, {
+        setCookie("token", token, {
             maxAge: 60 * 60 * 24 * 5 //5 days
         })
 

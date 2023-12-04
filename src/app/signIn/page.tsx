@@ -3,18 +3,13 @@
 import { Eye, EyeOff } from "lucide-react"
 import { useContext, useState } from "react"
 import { useForm } from "react-hook-form"
-import {z} from "zod"
+import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import Link from "next/link"
 import { AuthContext } from "../contexts/AuthContext"
 import Spinner from "../components/Spinner"
+import { UserData } from "../types"
 
-interface UserData {
-  confirm_password: string,
-  email: string,
-  name: string,
-  password: string
-}
 
 const createUserFormSchema = z.object({
   name: z.string().min(1, "Nome é obrigatório"),

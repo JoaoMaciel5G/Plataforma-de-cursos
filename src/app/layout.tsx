@@ -4,6 +4,7 @@ import './globals.css'
 import React from 'react'
 import { AuthProvider } from './contexts/AuthContext'
 import CartContext from './contexts/cartContext'
+import { LoginProvider } from './contexts/LoginContext'
 
 const roboto = Roboto({weight: ["100", "300", "400", "500", "700", "900"], subsets: ["latin"]})
 
@@ -18,7 +19,9 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         <body className={`${roboto.className} bg-slate-200`}>
             <AuthProvider>
               <CartContext>
-                {children}
+                <LoginProvider>
+                  {children}
+                </LoginProvider>
               </CartContext> 
             </AuthProvider> 
         </body>

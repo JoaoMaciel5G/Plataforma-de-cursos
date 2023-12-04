@@ -5,12 +5,15 @@ import StarQuality from "../../componentsPrivateRoute/StarQuality"
 import { Trophy, MonitorSmartphone, GanttChartSquare, Clock10 } from "lucide-react"
 import Link from "next/link"
 import {useShoppingCart} from "use-shopping-cart"
+import "react-toastify/dist/ReactToastify.css";
+import { toast, ToastContainer } from 'react-toastify';
 
 export default function CourseDetailsPageClient({item, formattedPriceValue}: {item: Data, formattedPriceValue: number}){
-
+    
     const {addItem} = useShoppingCart()
     const formattedPrice = (formattedPriceValue / 100).toFixed(2)
     const priceInReal = formattedPrice.replace(".", ",")
+    const notifyCongratulationSuccessCart = () => toast.success("Você adicionou um produto ao carrinho")
 
     function addToCart () {
         addItem({
@@ -21,10 +24,23 @@ export default function CourseDetailsPageClient({item, formattedPriceValue}: {it
             currency: "BRL",
             image: item.images
         })
+        notifyCongratulationSuccessCart()
     }
 
     return(
         <section className="flex justify-center">
+            <ToastContainer 
+                position="top-center"
+                autoClose={1000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             <div className="w-2/5 mt-20">
                 <h2 className="font-semibold text-4xl my-4">
                     {item?.name}

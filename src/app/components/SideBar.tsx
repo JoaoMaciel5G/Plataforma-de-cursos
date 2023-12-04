@@ -1,5 +1,7 @@
-import { LogIn, Link, UserCircle } from "lucide-react";
+import { LogIn, UserCircle } from "lucide-react";
 import CloseSideBar from "./clientComponents/CloseSideBar";
+import Link from "next/link";
+
 
 export default function SideBar(){
     return(

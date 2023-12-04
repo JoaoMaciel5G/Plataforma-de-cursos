@@ -5,6 +5,7 @@ export interface Data {
     description: string,
     price: string
 }
+
 export interface StripeData {
     id: string,
     description: string,
@@ -14,4 +15,16 @@ export interface StripeData {
         unit_amount_decimal: string,
         currency: string
     }
+}
+
+export interface Login {
+    email: string,
+    password: string
+}
+
+export interface UserData {
+    confirm_password: string,
+    email: string,
+    name: string,
+    password: string
 }

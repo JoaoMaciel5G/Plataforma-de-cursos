@@ -18,7 +18,7 @@ async function getData(id: string) {
     return response
 }
 
-export default async function CoursesPageDetails({ params }: { params?: { id?: string } }){
+export default async function CoursesPageDetails({ params }: { params: { id: string } }){
     const {id} = params
 
     const response = await getData(id)

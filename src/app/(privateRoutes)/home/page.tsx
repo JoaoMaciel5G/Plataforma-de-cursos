@@ -1,37 +1,10 @@
-import jwt, {TokenExpiredError} from "jsonwebtoken"
-import { redirect} from 'next/navigation'
 import CourseItems from "../componentsPrivateRoute/CourseItems"
-import {cookies} from "next/headers"
 import { Playfair_Display } from "next/font/google"
 import Link from "next/link"
 
 const playFair = Playfair_Display({weight: ["400", "500", "600", "700", "800", "900"], subsets: ["latin"]})
 
 export default function Home(){
-    const cookie = cookies().get("token")
-    const hasCookie = cookies().has("token")
-
-    const secretKey = process.env.SECRET_KEY
-
-    if(cookie){
-        const getCookie = cookie.value
-
-        const decodetoken = jwt.verify(getCookie, secretKey!, (error, decoded)=>{
-            if(error){
-                if(error instanceof TokenExpiredError){//se o token estiver expirado, ele é redirecionado a fazer login novamente
-                    cookies().delete("token")
-                    redirect("/login")
-                }
-                cookies().delete("token")
-                redirect("/signIn")
-            }
-        });
-    }
-
-    if(!hasCookie){
-        redirect("/signIn")
-    }
-
     return(
             <main className="flex flex-col items-center w-full">
                 <div>
