@@ -16,14 +16,15 @@ export async function middleware(req: NextRequest) {
 
   if(response.status == 403){
     deleteCookie("token", {res, req})
-    res.headers.set("location", `/login`)
+    res.headers.set("location", `https://plataforma-de-cursos-amber.vercel.app/login`)
     return res
   }else if(data.error){
     deleteCookie("token", {res, req})
-    res.headers.set("location", `/signIn`)
+    res.headers.set("location", `https://plataforma-de-cursos-amber.vercel.app/signIn`)
     return res
   }
 }
+
 export const config = {
   matcher: ["/home", "/cart", "/contact", "/exploreCourses", "/plains"]
 }
