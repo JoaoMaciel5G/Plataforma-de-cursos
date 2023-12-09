@@ -4,8 +4,6 @@ import Guaranty from "./components/Guaranty"
 import Suport from "./components/Suport"
 import Statement from "./components/Statement"
 import Header from "./components/Header"
-import { redirect} from "next/navigation"
-import { cookies } from "next/headers"
 
 export default function Home() {
   return (

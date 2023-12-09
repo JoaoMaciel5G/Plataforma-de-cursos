@@ -6,13 +6,13 @@ type UserData = {
     password: string
 }
 
-export async function signInRequest({name, email, password}: UserData) {
+export async function signInRequest({email, name, password}: UserData) {
     const url = process.env.URL
 
     const response = await fetch(`${url}/create`, {
-        method: "post",
+        method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-type": "application/json"
         },
         body: JSON.stringify({
             name,
@@ -21,7 +21,7 @@ export async function signInRequest({name, email, password}: UserData) {
         })
     })
 
-    const {token, userData} = await response.json()
+    const { token, userData, error } = await response.json()
 
-    return { token, userData }
+    return { token, userData, error }
 }

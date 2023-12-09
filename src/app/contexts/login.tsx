@@ -1,6 +1,5 @@
 "use server"
 
-import { resolveSoa } from "dns"
 import { Login } from "../types"
 
 export async function loginRequest({email, password}: Login) {

@@ -61,9 +61,7 @@ export default function Login() {
                 </div>
                 {error && <span className="text-red-700">{error}</span>}
             </div>
-            <div className="flex justify-center bg-violet-650 rounded-md py-4 cursor-pointer text-white hover:bg-violet-800 mb-4">
-              {isSubmitting ? <Spinner/> : <button onClick={() => handleSubmit(onSubmit)()} className="w-full h-full">Entrar</button>}
-            </div>
+            {isSubmitting ? <Spinner/> : <button onClick={() => handleSubmit(onSubmit)()} className=" bg-violet-650  rounded-lg py-4 cursor-pointer text-white hover:bg-violet-800 w-full my-4">Entrar</button>}
             <Link className="font-semibold underline" href="forgot-password">Esqueceu sua senha?</Link>
         </div>
     </section>

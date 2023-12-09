@@ -10,7 +10,6 @@ import { AuthContext } from "../contexts/AuthContext"
 import Spinner from "../components/Spinner"
 import { UserData } from "../types"
 
-
 const createUserFormSchema = z.object({
   name: z.string().min(1, "Nome é obrigatório"),
   email: z.string().min(1, "Email é obrigatório").email("Formato de email inválido"),
@@ -23,7 +22,7 @@ const createUserFormSchema = z.object({
 
 export default function SignIn() {
   const [showPassword, setShowPassword] = useState(false)
-  const { signIn } = useContext(AuthContext)
+  const { signIn, error } = useContext(AuthContext)
 
   const {register, handleSubmit, formState} = useForm<createUserFormData>({
     resolver: zodResolver(createUserFormSchema)
@@ -33,11 +32,11 @@ export default function SignIn() {
 
   type createUserFormData = z.infer<typeof createUserFormSchema>
 
-  const onSubmit = async ( data: UserData) => {
+  const onSubmit = async ( { name, email, password }: UserData) => {
     const userData = {
-      name: data.name,
-      email: data.email,
-      password: data.password
+      email,
+      name,
+      password
     }
 
     return await signIn(userData)
@@ -76,7 +75,7 @@ export default function SignIn() {
                     {errors.password && <span className="text-red-700">{errors.password.message}</span>}
                 </div>
             </div>
-            <div className="mb-4">
+            <div>
                 <div>
                   <label htmlFor="passwd">Confirme a senha</label>  
                 </div>
@@ -86,6 +85,9 @@ export default function SignIn() {
                     </div>
                     {errors.confirm_password && <span className="text-red-700">{errors.confirm_password.message}</span>}
                 </div>
+            </div>
+            <div className="mb-4">
+              {error && <span className="text-red-700">{error}</span>}
             </div>
             {isSubmitting ? <Spinner/> : <button onClick={() => handleSubmit(onSubmit)()} className=" bg-violet-650  rounded-lg py-4 cursor-pointer text-white hover:bg-violet-800 w-full">Cadastrar-se</button>}
             <p className="mt-2">Já tem conta? <Link href="/login" className="underline font-semibold">Faça login</Link></p>

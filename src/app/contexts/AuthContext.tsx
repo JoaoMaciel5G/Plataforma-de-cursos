@@ -12,7 +12,7 @@ type UserData = {
 }
 
 type AuthContextType ={
-    isAuthenticated: boolean,
+    error: string | undefined,
     user: UserData | undefined,
     signIn: (data: UserData) => Promise<void>
 }
@@ -23,13 +23,17 @@ export function AuthProvider({ children }: {children: ReactNode}){
     const router = useRouter()
 
     const [user, setUser] = useState<UserData | undefined>()
-
-    const isAuthenticated = !!user
+    const [error, setError] = useState()
 
     async function signIn(data: UserData) {
-        const {token, userData} = await signInRequest(data)
+        const {token, userData, error} = await signInRequest(data)
 
         setUser(userData)
+
+        if(error){
+            setError(error)
+            return
+        }
 
         setCookie("token", token, {
             maxAge: 60 * 60 * 24 * 5 //5 days
@@ -39,7 +43,7 @@ export function AuthProvider({ children }: {children: ReactNode}){
     }
 
     return(
-        <AuthContext.Provider value={{isAuthenticated, user, signIn}}>
+        <AuthContext.Provider value={{ error, user, signIn}}>
             {children}
         </AuthContext.Provider>
     )
