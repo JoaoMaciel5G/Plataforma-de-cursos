@@ -5,6 +5,9 @@ import React from 'react'
 import { AuthProvider } from './contexts/AuthContext'
 import CartContext from './contexts/cartContext'
 import { LoginProvider } from './contexts/LoginContext'
+import { ForgotPasswordProvider } from './contexts/forgotPassword'
+import { ChangePasswordProvider } from './contexts/changePassword'
+import Header from './components/Header'
 
 const roboto = Roboto({weight: ["100", "300", "400", "500", "700", "900"], subsets: ["latin"]})
 
@@ -20,7 +23,11 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
             <AuthProvider>
               <CartContext>
                 <LoginProvider>
-                  {children}
+                  <ForgotPasswordProvider>
+                    <ChangePasswordProvider>
+                      {children}
+                    </ChangePasswordProvider>
+                  </ForgotPasswordProvider>
                 </LoginProvider>
               </CartContext> 
             </AuthProvider> 

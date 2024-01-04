@@ -6,6 +6,14 @@ export interface Data {
     price: string
 }
 
+export interface PlainSignatures {
+    plain_id: string,
+	plain_name: string,
+	price: string,
+	discount_price: string,
+	totalValue: string
+}
+
 export interface StripeData {
     id: string,
     description: string,

@@ -14,13 +14,16 @@ export async function middleware(request: NextRequest) {
 
   const data = await response.json()
 
-  if(request.nextUrl.pathname.startsWith('/') && request.nextUrl.pathname !== "/home"){
+  if(request.nextUrl.pathname == '/' ||  request.nextUrl.pathname == '/login' || request.nextUrl.pathname == '/signIn'){
     if(response.status == 200){
       return NextResponse.redirect(new URL('/home', request.url))
+    }else if(data.error){
+      res.cookies.delete("token")
+      return res
     }
   }
 
-  if(request.cookies.has("token") && request.nextUrl.pathname.startsWith('/home')){
+  if(request.cookies.has("token")){
     if(data.error){
       res.cookies.delete("token")
       return res
@@ -34,13 +37,15 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher : [
+    "/login",
+    "/signIn",
     "/",
     "/home",
     "/cart",
     "/contact",
-    "/courses/:path*",
+    "/courses/:path?",
     "/exploreCourses",
     "/plains",
-    "/success"
+    "/success/:path?",
   ]
 }

@@ -26,7 +26,7 @@ export function LoginProvider({children}: {children: ReactNode}){
         }
         
         setCookie("token", loginData.newToken, {
-            maxAge: 60 * 60 * 24 * 5 //5 days
+            maxAge: 60 * 60 * 24 * 2 //2 days
         })
 
         router.push("/home")

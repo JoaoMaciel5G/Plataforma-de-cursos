@@ -21,7 +21,7 @@ function Cart() {
     }
 
     return ( 
-        <main className="flex">
+        <main className="flex max-md:flex-col">
             <section className="w-3/4 mt-28 ml-10">
                 <div className="my-10">
                     <h2 className="text-3xl text-purple">Meu carrinho</h2>   
@@ -48,7 +48,7 @@ function Cart() {
                 }
                 </div>
             </section>
-            <section className="w-1/4 mt-28 mx-10">
+            <section className="w-1/4 mt-28 px-6 max-md:w-full">
                 <h2 className="border-b-[1px] border-zinc-400 text-3xl p-3 text-purple">Detalhes</h2>
                 <div className="border-b-[1px] border-zinc-400 flex justify-between py-5">
                     <p className="text-lg">Subtotal</p>

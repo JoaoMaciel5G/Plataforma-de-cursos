@@ -14,7 +14,7 @@ export default function Header() {
             <div className="max-[900px]:hidden gap-5 flex">
                 <div className="group flex items-center text-white">
                     <LayoutGrid className="group-hover:text-aqua"/>
-                    <Link href="/exploreCourses" className="px-2 text-xl group-hover:text-aqua">Explorar Cursos</Link>
+                    <Link href="/plains" className="px-2 text-xl group-hover:text-aqua">Planos de assinatura</Link>
                 </div>
                 <div className="group flex items-center  text-white">
                     <ShoppingCart className="group-hover:text-aqua"/>

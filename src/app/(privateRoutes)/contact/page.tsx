@@ -50,8 +50,8 @@ export default function Contact(){
             <div className="my-14">
                 <h2 className="font-semibold text-6xl">Entrar em contato</h2>
             </div>
-            <section className="flex">
-                <div className="w-2/6 mx-10">
+            <section className="flex max-md:flex-col">
+                <div className="w-2/6 px-10 max-md:w-full">
                     <h2 className="font-semibold text-3xl uppercase my-3">Não seja timido</h2>
                     <p className="my-3">Fique a vontade para fazer a sua pergunta, ou entrar em contato em caso de dúvida, reembolso, problema com a compra dos cursos, ou qualquer outro assunto</p>
                     <div className="flex items-center my-3">
@@ -63,7 +63,7 @@ export default function Contact(){
                         <p className="text-lg">Urgência? Ligue para a nossa central para atendimento mais rápido: <span>+55 1156780675</span></p>
                     </div>
                 </div>
-                <div className="w-4/6">
+                <div className="w-4/6 max-md:w-full px-6">
                     <div>
                         <div className="my-5">
                             <input type="text" placeholder="Coloque o seu nome" className="w-full outline-none p-3 text-lg rounded-lg border-2 border-purple" {...register("name")}/>

@@ -11,7 +11,7 @@ export default async function CourseItems(){
 
     return(
         <Suspense fallback={<Loading/>}>
-                <div className="flex gap-4 mb-8">
+                <div className="flex gap-4 mb-8 max-[1310px]:flex-col">
                     {
                         courses && courses.map((item: Data)=>{
                             const priceInCents = Math.round(parseFloat(item.price) * 100)
@@ -19,10 +19,10 @@ export default async function CourseItems(){
                             const priceInReal = formattedPrice.replace(".", ",")
                             
                             return(
-                                <div key={item.id}>
+                                <div key={item.id} className="flex flex-col justify-center items-center">
                                     <div>
-                                        <Link href={`/courses/${item.id}`}>
-                                            <img className="bg-violet-500 rounded-sm p-3 w-full" src={item.images} alt="Imagem Cursos"/>
+                                        <Link href={`/courses/${item.id}`} className="flex justify-center items-center">
+                                            <img className="bg-violet-500 rounded-sm p-3 w-full max-[1000px]:w-5/6" src={item.images} alt="Imagem Cursos"/>
                                         </Link>
                                     </div>
                                     <Link href={`/courses/${item.id}`}>

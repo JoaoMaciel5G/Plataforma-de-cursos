@@ -14,7 +14,7 @@ export default function Success ({params}: {params: {sessionId: string}}){
         setTimeout(()=>{
             router.push("/home")
         }, 3000)
-    })
+    }, [])
     
     return(
         <main className="flex flex-col justify-center items-center">

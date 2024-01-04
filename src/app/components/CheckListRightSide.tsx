@@ -1,5 +1,6 @@
 import StarCheckList from "./StarCheckRightSide";
 import ItemCheckRightSide from "./ItemCheckRightSide";
+import Link from "next/link";
 
 export default function CheckListRightSide(){
     return(
@@ -16,7 +17,7 @@ export default function CheckListRightSide(){
                         <ItemCheckRightSide>Diversos certificados e mais de 76 projetos e desafios práticos</ItemCheckRightSide>
                         <ItemCheckRightSide>7 dias de Garantia</ItemCheckRightSide>
                     </div>
-                    <button className="w-full text-white bg-violet-600 rounded-lg py-5 font-semibold text-lg tracking-wider hover:bg-violet-650">Quero Assinar</button>
+                    <Link href="/signIn" className="w-full flex justify-center text-white bg-violet-600 rounded-lg py-5 font-semibold text-lg tracking-wider hover:bg-violet-650">Quero Assinar</Link>
                     <p className="text-center pt-10 font-semibold text-xl text-black">Desconto de R$ 100 no plano mensal</p>
                 </div>
             </div>

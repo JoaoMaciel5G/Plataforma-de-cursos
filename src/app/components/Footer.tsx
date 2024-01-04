@@ -20,18 +20,18 @@ export default function Footer(){
         </div>
         <div className="max-lg:hidden">
           <h2 className="font-semibold text-lg pb-3">Cursos Online</h2>
-          <p className="text-zinc-500">Arquitetura de Software</p>
-          <p className="text-zinc-500">Design Patterns</p>
-          <p className="text-zinc-500">Inglês</p>
-          <p className="text-zinc-500">Linkedin</p>
-          <p className="text-zinc-500">Soft Skills</p>
+          <p className="text-zinc-500 cursor-pointer">Arquitetura de Software</p>
+          <p className="text-zinc-500 cursor-pointer">Design Patterns</p>
+          <p className="text-zinc-500 cursor-pointer">Inglês</p>
+          <p className="text-zinc-500 cursor-pointer">Linkedin</p>
+          <p className="text-zinc-500 cursor-pointer">Soft Skills</p>
         </div>
         <div className="max-lg:hidden">
           <h2 className="font-semibold text-lg pb-3">Categorias</h2>
-          <p className="text-zinc-500">Competencias pessoais</p>
-          <p className="text-zinc-500">Produtividade</p>
-          <p className="text-zinc-500">Gestão e trabalho em equipe</p>
-          <p className="text-zinc-500">Liderança positiva</p>
+          <p className="text-zinc-500 cursor-pointer">Competencias pessoais</p>
+          <p className="text-zinc-500 cursor-pointer">Produtividade</p>
+          <p className="text-zinc-500 cursor-pointer">Gestão e trabalho em equipe</p>
+          <p className="text-zinc-500 cursor-pointer">Liderança positiva</p>
         </div>
       </footer>
     )

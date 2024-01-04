@@ -28,7 +28,7 @@ export default function CourseDetailsPageClient({item, formattedPriceValue}: {it
     }
 
     return(
-        <section className="flex justify-center">
+        <section className="flex justify-center max-md:flex-col">
             <ToastContainer 
                 position="top-center"
                 autoClose={1000}
@@ -41,7 +41,7 @@ export default function CourseDetailsPageClient({item, formattedPriceValue}: {it
                 pauseOnHover
                 theme="light"
             />
-            <div className="w-2/5 mt-20">
+            <div className="w-2/5 mt-20 max-md:w-full px-7">
                 <h2 className="font-semibold text-4xl my-4">
                     {item?.name}
                 </h2>
@@ -68,9 +68,9 @@ export default function CourseDetailsPageClient({item, formattedPriceValue}: {it
                     <Link href="/plains" className="bg-purple text-white text-lg p-2 rounded-lg hover:bg-violet-650">Experimente nossos Planos</Link>
                 </div>
             </div>
-            <div className="mt-20 ml-12">
-                <div className="bg-violet-500 rounded-lg">
-                    <img src={item?.images} alt="Imagem curso" />
+            <div className="mt-20 px-7">
+                <div className="max-md:w-full max-md:flex max-md:justify-center">
+                    <img src={item?.images} alt="Imagem curso" className="rounded-lg bg-violet-500 max-md:w-3/5" />
                 </div>
                 <div>
                     <div className="flex my-3 items-center justify-between">
@@ -84,7 +84,6 @@ export default function CourseDetailsPageClient({item, formattedPriceValue}: {it
                     </div>
                 </div>
                 <button onClick={addToCart} className="block bg-purple my-4 text-white text-lg p-2 rounded-lg hover:bg-violet-650">Adicionar ao carrinho</button>
-                <button className="bg-purple text-white text-lg p-2 rounded-lg hover:bg-violet-650">Comprar esse curso</button>
                 <div>
                     <p className="my-3 text-lg">Garantia de devolução do dinheiro em 7 dias</p>
                 </div>
