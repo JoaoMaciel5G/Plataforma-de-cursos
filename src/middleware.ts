@@ -33,6 +33,8 @@ export async function middleware(request: NextRequest) {
   if(!request.cookies.has("token")){
     return NextResponse.redirect(new URL("/login", request.url))
   }
+  
+  return res
 }
 
 export const config = {
