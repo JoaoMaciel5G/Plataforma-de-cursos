@@ -5,7 +5,7 @@ import OneMonthPlain from "../componentsPrivateRoute/OneMonthPlain"
 import OneYearPlain from "../componentsPrivateRoute/OneYearPlain"
 
 export default async function Plains(){
-    const url = process.env.URL
+    const url = process.env.URL_API
 
     const response = await fetch(`${url}/getPlains`)
     const data = await response.json()

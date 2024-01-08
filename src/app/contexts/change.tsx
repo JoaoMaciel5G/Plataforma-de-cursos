@@ -1,7 +1,7 @@
 "use server"
 
 export async function changePasswordRequest(password: string, id: string) {
-    const url = process.env.URL
+    const url = process.env.URL_API
 
     const response = await fetch(`${url}/updatePassword`, {
         method: "PATCH",

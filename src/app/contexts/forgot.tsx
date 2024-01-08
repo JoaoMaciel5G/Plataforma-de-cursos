@@ -1,7 +1,7 @@
 "use server"
 
 export async function forgotRequest(email: string, uri: string) {
-    const url = process.env.URL
+    const url = process.env.URL_API
     
     const response = await fetch(`${url}/sendMail`, {
         method: "POST",

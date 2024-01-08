@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 
 export default async function CourseItems(){
-    const url = process.env.URL
+    const url = process.env.URL_API
 
     const response = await fetch(`${url}/getCourses`)
     const courses = await response.json()

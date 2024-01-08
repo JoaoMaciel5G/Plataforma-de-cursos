@@ -4,7 +4,7 @@ import { Login } from "../types"
 
 export async function loginRequest({email, password}: Login) {
 
-    const url = process.env.URL
+    const url = process.env.URL_API
 
     const response = await fetch(`${url}/login`, {
         method: "post",

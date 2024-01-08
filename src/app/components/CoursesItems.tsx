@@ -5,7 +5,7 @@ import ChevronRightItem from "./clientComponents/ChevronRightItem";
 import { Data } from "../types";
 
 export default async function CoursesItems() {
-    const url = process.env.URL
+    const url = process.env.URL_API
 
     const response = await fetch(`${url}/getCourses`)
     const courses = await response.json()

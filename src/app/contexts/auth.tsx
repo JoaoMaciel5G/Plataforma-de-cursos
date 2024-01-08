@@ -7,7 +7,7 @@ type UserData = {
 }
 
 export async function signInRequest({email, name, password}: UserData) {
-    const url = process.env.URL
+    const url = process.env.URL_API
 
     const response = await fetch(`${url}/create`, {
         method: "POST",

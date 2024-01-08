@@ -1,6 +1,7 @@
 import { Data } from "@/app/types";
 import CourseDetailsPageClient from "./clientComponent";
 
+const url = process.env.URL_API
 export async function generateStaticParams() {
     const response = await fetch(`${url}/getCourses`);
     const paths = await response.json();
@@ -9,8 +10,6 @@ export async function generateStaticParams() {
       id: courses.id
     }));
 }
-
-const url = process.env.URL
 
 async function getData(id: string) {
     const request = await fetch(`${url}/getCourses/${id}`);

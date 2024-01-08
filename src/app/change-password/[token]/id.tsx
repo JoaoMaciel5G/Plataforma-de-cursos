@@ -1,7 +1,7 @@
 "use server"
 
 export async function getIdUser(token: string) {
-    const url = process.env.URL
+    const url = process.env.URL_API
 
     const response = await fetch(`${url}/verifyExpToken`, {
         method: "POST",

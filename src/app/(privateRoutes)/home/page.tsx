@@ -6,7 +6,7 @@ import Link from "next/link"
 const playFair = Playfair_Display({weight: ["400", "500", "600", "700", "800", "900"], subsets: ["latin"]})
 
 export default async function Home(){
-    const url = process.env.URL
+    const url = process.env.URL_API
 
     const response = await fetch(`${url}/getPlains`)
     const data = await response.json()

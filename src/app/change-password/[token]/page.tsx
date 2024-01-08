@@ -2,7 +2,7 @@ import ChangePasswordClient from "./clientComponent";
 
 export default async function ChangePassword({params}: {params: {token: string}}) {
   const token = params.token
-  const url = process.env.URL
+  const url = process.env.URL_API
 
   const res = await fetch(`${url}/verifyExpToken`, {
     method: "POST",

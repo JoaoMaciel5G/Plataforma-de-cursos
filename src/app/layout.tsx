@@ -7,7 +7,6 @@ import CartContext from './contexts/cartContext'
 import { LoginProvider } from './contexts/LoginContext'
 import { ForgotPasswordProvider } from './contexts/forgotPassword'
 import { ChangePasswordProvider } from './contexts/changePassword'
-import Header from './components/Header'
 
 const roboto = Roboto({weight: ["100", "300", "400", "500", "700", "900"], subsets: ["latin"]})
 

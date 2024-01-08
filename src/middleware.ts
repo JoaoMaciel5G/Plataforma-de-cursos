@@ -2,7 +2,7 @@ import { NextResponse, type NextRequest } from 'next/server'
 
 export async function middleware(request: NextRequest) {
   const cookie = request.cookies.get("token")?.value!
-  const url = process.env.URL
+  const url = process.env.URL_API
   const res = NextResponse.next()
 
   const response = await fetch(`${url}/verifyExpToken`, {
