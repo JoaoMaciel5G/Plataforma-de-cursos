@@ -25,7 +25,7 @@ const createUserFormSchema = z.object({
     path: ["confirm_password"],
 })
 
-export default function ChangePasswordCl({token}: {token: string}) {
+export default function ChangePasswordClient({token}: {token: string}) {
   const router = useRouter()
   const [showPassword, setShowPassword] = useState(false)
   const {changePassword} = useContext(ChangePassWord)

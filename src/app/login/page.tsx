@@ -15,7 +15,7 @@ const createUserFormSchema = z.object({
   password: z.string().min(1, "Senha é obrigatória"),
 })
 
-export default function Login() {
+export default function LoginClient() {
   const { login, error } = useContext(LoginContext)
   const [showPassword, setShowPassword] = useState(false)
 

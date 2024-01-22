@@ -14,13 +14,17 @@ export async function middleware(request: NextRequest) {
 
   const data = await response.json()
 
-  if(request.nextUrl.pathname == '/' ||  request.nextUrl.pathname == '/login' || request.nextUrl.pathname == '/signIn'){
-    if(response.status == 200){
-      return NextResponse.redirect(new URL('/home', request.url))
-    }else if(data.error){
-      res.cookies.delete("token")
-      return res
-    }
+  switch (request.nextUrl.pathname) {
+    case '/':
+    case '/login':
+    case '/signIn':
+      if (response.status === 200) {
+        return NextResponse.redirect(new URL('/home', request.url));
+      } else if (data.error) {
+        res.cookies.delete('token');
+        return res;
+      }
+      break;
   }
 
   if(request.cookies.has("token")){
