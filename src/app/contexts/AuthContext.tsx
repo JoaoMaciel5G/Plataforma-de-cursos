@@ -12,8 +12,7 @@ type UserData = {
 }
 
 type AuthContextType ={
-    error: string | undefined,
-    user: UserData | undefined,
+    createUserError: string | undefined,
     signIn: (data: UserData) => Promise<void>
 }
 
@@ -22,16 +21,13 @@ export const AuthContext = createContext({} as AuthContextType)
 export function AuthProvider({ children }: {children: ReactNode}){
     const router = useRouter()
 
-    const [user, setUser] = useState<UserData | undefined>()
-    const [error, setError] = useState()
+    const [createUserError, setCreateUserError] = useState<string | undefined>()
 
     async function signIn(data: UserData) {
         const {token, userData, error} = await signInRequest(data)
 
-        setUser(userData)
-
         if(error){
-            setError(error)
+            setCreateUserError(error)
             return
         }
 
@@ -43,7 +39,7 @@ export function AuthProvider({ children }: {children: ReactNode}){
     }
 
     return(
-        <AuthContext.Provider value={{ error, user, signIn}}>
+        <AuthContext.Provider value={{ createUserError, signIn}}>
             {children}
         </AuthContext.Provider>
     )

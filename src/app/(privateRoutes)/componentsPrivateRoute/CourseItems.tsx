@@ -28,8 +28,8 @@ export default async function CourseItems(){
                                     <Link href={`/courses/${item.id}`}>
                                         <h2 className="font-semibold my-2 h-4">{item.name}</h2>
                                     </Link>
-                                    <div className="flex items-center gap-2 mt-10 mb-5">
-                                        <p className="font-semibold text-lg">R$ {priceInReal}</p>
+                                    <div className="flex items-center mt-10 mb-5">
+                                        <p className="font-semibold text-lg mr-[5px]">R$ {priceInReal}</p>
                                         <p className="line-through text-lg text-zinc-500">R$ 39,90</p>
                                     </div>
                                 </div>

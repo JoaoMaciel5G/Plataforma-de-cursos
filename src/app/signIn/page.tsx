@@ -22,7 +22,7 @@ const createUserFormSchema = z.object({
 
 export default function SignIn() {
   const [showPassword, setShowPassword] = useState(false)
-  const { signIn, error } = useContext(AuthContext)
+  const { signIn, createUserError } = useContext(AuthContext)
 
   const {register, handleSubmit, formState} = useForm<createUserFormData>({
     resolver: zodResolver(createUserFormSchema)
@@ -32,7 +32,7 @@ export default function SignIn() {
 
   type createUserFormData = z.infer<typeof createUserFormSchema>
 
-  const onSubmit = async ( { name, email, password }: UserData) => {
+  const onSubmit = async ({ name, email, password }: UserData) => {
     const userData = {
       email,
       name,
@@ -87,7 +87,7 @@ export default function SignIn() {
                 </div>
             </div>
             <div className="mb-4">
-              {error && <span className="text-red-700">{error}</span>}
+              {createUserError && <span className="text-red-700">{createUserError}</span>}
             </div>
             {isSubmitting ? <Spinner/> : <button onClick={() => handleSubmit(onSubmit)()} className=" bg-violet-650  rounded-lg py-4 cursor-pointer text-white hover:bg-violet-800 w-full">Cadastrar-se</button>}
             <p className="mt-2">Já tem conta? <Link href="/login" className="underline font-semibold">Faça login</Link></p>

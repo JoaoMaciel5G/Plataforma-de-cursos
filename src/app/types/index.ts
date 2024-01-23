@@ -36,3 +36,15 @@ export interface UserData {
     name: string,
     password: string
 }
+
+export interface CreateUserData{
+    error?: string,
+    token: string,
+    userData:  {
+        id: string,
+        name: string, 
+        email: string,
+        password: string,
+        createdAt: string
+    }
+}

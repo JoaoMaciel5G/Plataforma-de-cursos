@@ -1,5 +1,7 @@
 "use server"
 
+import { CreateUserData } from "../types"
+
 type UserData = {
     name: string,
     email: string,
@@ -21,7 +23,7 @@ export async function signInRequest({email, name, password}: UserData) {
         })
     })
 
-    const { token, userData, error } = await response.json()
+    const data: CreateUserData = await response.json()
 
-    return { token, userData, error }
+    return data
 }
