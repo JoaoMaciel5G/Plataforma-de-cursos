@@ -14,7 +14,7 @@ export default async function CourseItems(){
                 <div className="flex gap-4 mb-8 max-[1310px]:flex-col">
                     {
                         courses && courses.map((item: Data)=>{
-                            const priceInCents = Math.round(parseFloat(item.price) * 100)
+                            const priceInCents = Math.round(parseFloat(item?.price) * 100)
                             const formattedPrice = (priceInCents / 100).toFixed(2)
                             const priceInReal = formattedPrice.replace(".", ",")
                             

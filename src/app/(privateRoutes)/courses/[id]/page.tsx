@@ -23,7 +23,7 @@ export default async function CoursesPageDetails({ params }: { params: { id: str
     const response = await getData(id)
     const item: Data = response[0]
 
-    const priceInCents = Math.round(parseFloat(item.price) * 100);
+    const priceInCents = Math.round(parseFloat(item?.price) * 100);
 
     return(
         <CourseDetailsPageClient item={item} formattedPriceValue={priceInCents}/>
